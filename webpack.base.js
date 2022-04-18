@@ -56,7 +56,7 @@ const config = (dirname, port) => {
           ],
         },
         {
-          test: /\.(p|s)?css$/,
+          test: /\.s?css$/,
           use: [
             isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
             'css-loader',
