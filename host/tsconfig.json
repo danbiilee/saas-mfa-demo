@@ -1,7 +1,6 @@
 {
   "extends": "../tsconfig.base.json",
   "compilerOptions": {
-    "typeRoots": ["/types"],
     "paths": {
       "@images/*": ["/src/assets/images/*"]
     }

@@ -16,6 +16,7 @@
     "noPropertyAccessFromIndexSignature": true,
     "moduleResolution": "node",
     "baseUrl": ".",
+    "typeRoots": ["/types"],
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true,
