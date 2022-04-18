@@ -1,0 +1,19 @@
+{
+  "name": "micro-frontend-examples",
+  "license": "ISC",
+  "private": true,
+  "workspaces": [
+    "host",
+    "remotes/*",
+    "shared"
+  ],
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "clean": "lerna clean --yes && rm -rf ./node_modules",
+    "start": "lerna run start --parallel",
+    "build": "lerna run build"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
