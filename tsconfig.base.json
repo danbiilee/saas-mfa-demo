@@ -3,7 +3,6 @@
     "target": "es6",
     "module": "esnext",
     "allowJs": true,
-    "checkJs": true,
     "jsx": "react",
     "sourceMap": true,
     "removeComments": true,
