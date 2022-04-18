@@ -29,10 +29,6 @@ const {
 // Module Federation's Configuration
 const mfConfig = {
   name: hostName,
-  remotes: {
-    [app1Name]: `${app1Name}@${app1URL}/${app1Name}RemoteEntry.js`,
-    [app2Name]: `${app2Name}@${app2URL}/${app2Name}RemoteEntry.js`,
-  },
   shared: {
     ...deps,
     react: { singleton: true, requiredVersion: deps['react'] },
@@ -58,6 +54,8 @@ const config = merge(base(__dirname, port), {
       'NODE_ENV',
       'TE4M_MF_NAME_APP1',
       'TE4M_MF_NAME_APP2',
+      'TE4M_MF_URL_APP1',
+      'TE4M_MF_URL_APP2',
     ]),
     new ModuleFederationPlugin(mfConfig),
     isDevelopment &&

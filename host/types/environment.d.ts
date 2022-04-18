@@ -4,5 +4,7 @@ declare namespace NodeJS {
     readonly PUBLIC_URL: string;
     readonly TE4M_MF_NAME_APP1: string;
     readonly TE4M_MF_NAME_APP2: string;
+    readonly TE4M_MF_URL_APP1: string;
+    readonly TE4M_MF_URL_APP2: string;
   }
 }
