@@ -15,7 +15,11 @@ if (isDevelopment) {
   dotenv.config({ path: '../../.env.production' });
 }
 
-const { TE4M_MF_PORT_APP1: port, TE4M_MF_NAME_APP1: app1Name } = process.env;
+const {
+  TE4M_MF_PORT_APP1: port,
+  TE4M_MF_NAME_APP1: app1Name,
+  TE4M_MF_URL_APP1: app1URL,
+} = process.env;
 
 // Module Federation's Configuration
 const mfConfig = {
@@ -42,6 +46,10 @@ const config = merge(base(__dirname, port), {
     },
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env.PUBLIC_URL': JSON.stringify(app1URL),
+    }),
+    new webpack.EnvironmentPlugin(['NODE_ENV']),
     new ModuleFederationPlugin(mfConfig),
     isDevelopment &&
       new MFLiveReloadPlugin({

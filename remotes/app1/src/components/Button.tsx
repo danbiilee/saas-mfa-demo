@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button as SharedButton } from '@TE4M/shared';
+import { Button as SharedButton } from '@te4m/shared';
 
 const Button = () => {
   const [count, setCount] = useState(0);

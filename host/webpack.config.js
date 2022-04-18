@@ -36,6 +36,10 @@ const mfConfig = {
       singleton: true,
       requiredVersion: deps['react-dom'],
     },
+    'styled-components': {
+      singleton: true,
+      requiredVersion: deps['styled-components'],
+    },
   },
 };
 
