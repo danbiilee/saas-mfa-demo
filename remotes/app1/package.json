@@ -8,8 +8,8 @@
   },
   "dependencies": {
     "@te4m/shared": "^0.1.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.17.5",
@@ -19,9 +19,8 @@
     "@module-federation/fmr": "^0.0.7",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.4",
     "@types/node": "^17.0.21",
-    "@types/react": "^17.0.40",
-    "@types/react-dom": "^17.0.13",
-    "@types/styled-components": "^5.1.24",
+    "@types/react": "^18.0.5",
+    "@types/react-dom": "^18.0.1",
     "@types/webpack": "^5.28.0",
     "babel-loader": "^8.2.3",
     "cross-env": "^7.0.3",
