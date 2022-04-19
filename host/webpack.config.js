@@ -20,10 +20,6 @@ const {
   TE4M_MF_PORT_HOST: port,
   TE4M_MF_NAME_HOST: hostName,
   TE4M_MF_URL_HOST: hostURL,
-  TE4M_MF_NAME_APP1: app1Name,
-  TE4M_MF_URL_APP1: app1URL,
-  TE4M_MF_NAME_APP2: app2Name,
-  TE4M_MF_URL_APP2: app2URL,
 } = process.env;
 
 // Module Federation's Configuration
