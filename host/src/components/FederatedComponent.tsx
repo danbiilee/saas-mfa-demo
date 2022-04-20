@@ -1,5 +1,5 @@
 import React from 'react';
-import useFederatedComponent, { Error } from '@TE4M/shared';
+import useFederatedComponent, { Error } from '@saas-fe/shared';
 
 // TODO props를 정의할 수 없는 문제 개선 필요
 const FederatedComponent = ({
@@ -16,14 +16,8 @@ const FederatedComponent = ({
   errorPage?: any;
   onClick?: any;
 }) => {
-  const {
-    Component: RemoteApp,
-    errorLoading,
-  }: { Component: any; errorLoading: boolean } = useFederatedComponent(
-    url,
-    scope,
-    module,
-  );
+  const { Component: RemoteApp, errorLoading }: { Component: any; errorLoading: boolean } =
+    useFederatedComponent(url, scope, module);
 
   const renderErrorPage = () => {
     if (errorPage) {

@@ -10,6 +10,7 @@ const deps = require('./package.json').dependencies;
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
 // Loads Environment Variables
+dotenv.config({ path: '../.env' });
 if (isDevelopment) {
   dotenv.config({ path: '../.env.development' });
 } else {
@@ -17,27 +18,29 @@ if (isDevelopment) {
 }
 
 const {
-  TE4M_MF_PORT_HOST: port,
-  TE4M_MF_NAME_HOST: hostName,
-  TE4M_MF_URL_HOST: hostURL,
+  SAAS_FE_MF_PORT_HOST: port,
+  SAAS_FE_MF_NAME_HOST: hostName,
+  SAAS_FE_MF_URL_HOST: hostURL,
 } = process.env;
 
 // Module Federation's Configuration
 const mfConfig = {
   name: hostName,
   shared: {
-    ...deps,
+    // ...deps,
     react: { singleton: true, requiredVersion: deps['react'] },
     'react-dom': {
       singleton: true,
       requiredVersion: deps['react-dom'],
     },
-    'styled-components': {
-      singleton: true,
-      requiredVersion: deps['styled-components'],
-    },
+    // 'styled-components': {
+    //   singleton: true,
+    //   requiredVersion: deps['styled-components'],
+    // },
   },
 };
+
+console.log(mfConfig.shared);
 
 // Webpack's Configuration
 const config = merge(base(__dirname, port), {
@@ -52,10 +55,10 @@ const config = merge(base(__dirname, port), {
     }),
     new webpack.EnvironmentPlugin([
       'NODE_ENV',
-      'TE4M_MF_NAME_APP1',
-      'TE4M_MF_NAME_APP2',
-      'TE4M_MF_URL_APP1',
-      'TE4M_MF_URL_APP2',
+      'SAAS_FE_MF_NAME_APP1',
+      'SAAS_FE_MF_NAME_APP2',
+      'SAAS_FE_MF_URL_APP1',
+      'SAAS_FE_MF_URL_APP2',
     ]),
     new ModuleFederationPlugin(mfConfig),
     isDevelopment &&

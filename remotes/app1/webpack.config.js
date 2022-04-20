@@ -9,6 +9,7 @@ const deps = require('./package.json').dependencies;
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
 // Loads Environment Variables
+dotenv.config({ path: '../../.env' });
 if (isDevelopment) {
   dotenv.config({ path: '../../.env.development' });
 } else {
@@ -16,9 +17,9 @@ if (isDevelopment) {
 }
 
 const {
-  TE4M_MF_PORT_APP1: port,
-  TE4M_MF_NAME_APP1: app1Name,
-  TE4M_MF_URL_APP1: app1URL,
+  SAAS_FE_MF_PORT_APP1: port,
+  SAAS_FE_MF_NAME_APP1: app1Name,
+  SAAS_FE_MF_URL_APP1: app1URL,
 } = process.env;
 
 // Module Federation's Configuration
